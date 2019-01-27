@@ -3,11 +3,10 @@ var path = require("path");
 
 module.exports = function(app) {
     app.get("/api/friends", function(req, res) {
-        return res.json(friends);
+        return res.json(friendsData);
     });
     app.post("/api/friends", function(req, res) {
-        var newFriend = req.body;
-        friends.push(newFriend);
-        res.json(newFriend);
+        friendsData.push(req.body);
+        res.json(friendsData);
     });
 }
